@@ -1,1 +1,1 @@
-The Web URL: https://alokhibare.github.io/Myntra/
+The Web URL: https://alokhibare.github.io/myntraa
