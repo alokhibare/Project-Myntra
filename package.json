@@ -1,0 +1,18 @@
+{
+  "name": "project-myntra",
+  "version": "1.0.0",
+  "description": "Full-stack OG Myntra Website clone with Node.js Express server and SQLite DB",
+  "main": "server/app.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server/app.js",
+    "seed": "node server/seed.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "sqlite3": "^5.1.7"
+  }
+}

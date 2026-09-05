@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Myntra</title>
+    <title>Beauty & Personal Care - Myntra</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../imgs/Myntra-Logo.png" type="image/png">
     <link rel="apple-touch-icon" href="../imgs/Myntra-Logo.png">
@@ -12,9 +12,13 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
-</head>
 
 <body>
+    <!-- Top Announcement Ticker Bar -->
+    <div class="top-ticker-bar">
+        💄 BEAUTY FESTIVAL: FLAT ₹500 OFF ON TOP SKINCARE & MAKEUP BRANDS | CODE: <strong>MYNTRA500</strong>
+    </div>
+
     <header>
         <div class="logo-container">
             <a href="../index.html"><img class="myntra_home" src="../imgs/Myntra-Logo.png" alt="LOGO"></a>
@@ -28,36 +32,40 @@
         <nav class="nav_bar">
             <a href="../pages/mens.html">MEN</a>
             <a href="../pages/women.html">WOMEN</a>
-            <a href="../pages/kids.html">KiDS</a>
-            <a href="../pages/home.html">HOME</a>
-            <a href="../pages/beauty.html">BEUTY</a>
+            <a href="../pages/kids.html">KIDS</a>
+            <a href="../pages/home.html">HOME & LIVING</a>
+            <a href="../pages/beauty.html" style="color: #ff3f6c;">BEAUTY</a>
             <a href="../pages/genz.html">GENZ</a>
             <a href="../pages/studio.html" id="studio_link">STUDIO <sup>NEW</sup></a>
         </nav>
 
         <div class="search_bar">
             <span class="material-symbols-outlined search_icon">search</span>
-            <input class="search_input" placeholder="Search for products, brands and more">
+            <input class="search_input" placeholder="Search for makeup, serums, lipsticks and more">
         </div>
 
         <div class="action">
             <div class="action_bar">
-                <div class="action_container">
+                <div class="action_container" onclick="toggleAuthModal()">
                     <span class="material-symbols-outlined action_icon">person</span>
-                    <span class="action_name">Profile</span>
+                    <span class="action_name" id="profile-user-name">Profile</span>
                 </div>
-                <div class="action_container">
+                <div class="action_container" onclick="openWishlistModal()">
                     <span class="material-symbols-outlined action_icon">favorite</span>
                     <span class="action_name">Wishlist</span>
+                    <span class="badge" id="wishlist-count-badge">0</span>
                 </div>
-                <div class="action_container">
+                <div class="action_container" onclick="openCartModal()">
                     <span class="material-symbols-outlined action_icon">shopping_bag</span>
                     <span class="action_name">Bag</span>
+                    <span class="badge" id="cart-count-badge">0</span>
                 </div>
             </div>
         </div>
     </header>
+
     <main>
+        <!-- Hero Slideshow Banner for Beauty -->
         <section class="slideshow-container">
             <div class="slideshow">
                 <input type="radio" name="slide" id="s1" checked>
@@ -67,11 +75,11 @@
                 <input type="radio" name="slide" id="s5">
 
                 <div class="slide_wrapper">
-                    <div class="slide"><img src="../imgs/beuty/b1.jpg" alt="Slide 1"></div>
-                    <div class="slide"><img src="../imgs/beuty/b2.jpg" alt="Slide 2"></div>
-                    <div class="slide"><img src="../imgs/beuty/b3.webp" alt="Slide 3"></div>
-                    <div class="slide"><img src="../imgs/beuty/b4.jpg" alt="Slide 4"></div>
-                    <div class="slide"><img src="../imgs/beuty/b5.jpg" alt="Slide 5"></div>
+                    <div class="slide"><img src="../imgs/beuty/b1.jpg" alt="Beauty Banner 1"></div>
+                    <div class="slide"><img src="../imgs/beuty/b2.jpg" alt="Beauty Banner 2"></div>
+                    <div class="slide"><img src="../imgs/beuty/b3.webp" alt="Beauty Banner 3"></div>
+                    <div class="slide"><img src="../imgs/beuty/b4.jpg" alt="Beauty Banner 4"></div>
+                    <div class="slide"><img src="../imgs/beuty/b5.jpg" alt="Beauty Banner 5"></div>
                 </div>
 
                 <div class="navigation-dots">
@@ -81,132 +89,117 @@
                     <label for="s4" class="dot"></label>
                     <label for="s5" class="dot"></label>
                 </div>
-
             </div>
         </section>
+
         <section>
             <div class="category_heading">MEDAL WORTHY BRANDS TO BAG</div>
             <div class="category_items">
-                <a href="#"><img class="sale_item" src="../imgs/beuty/beuty_sec/b1.avif"></a>
-                <a href="#"><img class="sale_item" src="../imgs/beuty/beuty_sec/b2.jpeg"></a>
-                <a href="#"><img class="sale_item" src="../imgs/beuty/beuty_sec/b3.jpg"></a>
-                <a href="#"><img class="sale_item" src="../imgs/beuty/beuty_sec/b4.webp"></a>
-                <a href="#"><img class="sale_item" src="../imgs/beuty/beuty_sec/b5.webp"></a>
+                <a href="#catalog"><img class="sale_item" src="../imgs/beuty/beuty_sec/b1.avif"></a>
+                <a href="#catalog"><img class="sale_item" src="../imgs/beuty/beuty_sec/b2.jpeg"></a>
+                <a href="#catalog"><img class="sale_item" src="../imgs/beuty/beuty_sec/b3.jpg"></a>
+                <a href="#catalog"><img class="sale_item" src="../imgs/beuty/beuty_sec/b4.webp"></a>
+                <a href="#catalog"><img class="sale_item" src="../imgs/beuty/beuty_sec/b5.webp"></a>
             </div>
         </section>
-        <section>
-            <div class="category_heading">SHOP BY CATEGORY</div>
-            <div class="category_items">
-                <a href="#"><img class="sale_item" src="../imgs/categories/1.jpg"></a>
-                <a href="#"><img class="sale_item" src="../imgs/categories/2.jpg"></a>
-                <a href="#"><img class="sale_item" src="../imgs/categories/3.jpg"></a>
-                <a href="#"><img class="sale_item" src="../imgs/categories/4.jpg"></a>
-                <a href="#"><img class="sale_item" src="../imgs/categories/5.jpg"></a>
-                <a href="#"><img class="sale_item" src="../imgs/categories/6.jpg"></a>
-                <a href="#"><img class="sale_item" src="../imgs/categories/7.jpg"></a>
-                <a href="#"><img class="sale_item" src="../imgs/categories/8.jpg"></a>
-                <a href="#"><img class="sale_item" src="../imgs/categories/9.jpg"></a>
-                <a href="#"><img class="sale_item" src="../imgs/categories/10.jpg"></a>
+
+        <!-- DYNAMIC CATALOG SECTION FOR BEAUTY -->
+        <section class="catalog-section" id="catalog">
+            <aside class="sidebar-filters">
+                <div class="filter-group">
+                    <h4>BRAND</h4>
+                    <div id="brand-filter-list">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+            </aside>
+
+            <div class="catalog-content">
+                <div class="catalog-header">
+                    <h3 class="category_heading" style="margin:0;">BEAUTY & PERSONAL CARE</h3>
+                    <div class="sort-container">
+                        <label for="sort-selector">Sort by: </label>
+                        <select id="sort-selector">
+                            <option value="default">Recommended</option>
+                            <option value="price_asc">Price: Low to High</option>
+                            <option value="price_desc">Price: High to Low</option>
+                            <option value="discount_desc">Better Discount</option>
+                            <option value="rating_desc">Customer Rating</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="products-grid" class="products-grid">
+                    <!-- Products loaded dynamically from backend -->
+                </div>
             </div>
         </section>
     </main>
-    <div class="footer_container">
-        <div class="footer_column">
-            <h3>ONLINE SHOPPING</h3>
 
-            <a href="#">Men</a>
-            <a href="#">Women</a>
-            <a href="#">Kids</a>
-            <a href="#">Home & Living</a>
-            <a href="#">Beauty</a>
-            <a href="#">Gift Card</a>
-            <a href="#">Myntra Insider</a>
+    <footer>
+        <div class="footer_container">
+            <div class="footer_column">
+                <h3>ONLINE SHOPPING</h3>
+                <a href="../pages/mens.html">Men</a>
+                <a href="../pages/women.html">Women</a>
+                <a href="../pages/beauty.html">Beauty</a>
+            </div>
         </div>
-
-        <div class="footer_column">
-            <h3>ONLINE SHOPPING</h3>
-
-            <a href="#">Men</a>
-            <a href="#">Women</a>
-            <a href="#">Kids</a>
-            <a href="#">Home & Living</a>
-            <a href="#">Beauty</a>
-            <a href="#">Gift Card</a>
-            <a href="#">Myntra Insider</a>
-        </div>
-
-        <div class="footer_column">
-            <h3>ONLINE SHOPPING</h3>
-
-            <a href="#">Men</a>
-            <a href="#">Women</a>
-            <a href="#">Kids</a>
-            <a href="#">Home & Living</a>
-            <a href="#">Beauty</a>
-            <a href="#">Gift Card</a>
-            <a href="#">Myntra Insider</a>
-        </div>
-    </div>
-    <h3>POPULAR SEARCHES</h3>
-    <div class="footer_para">
-        Makeup | Dresses For Girls | T-Shirts | Sandals | Headphones | Babydolls | Blazers For Men | Handbags |
-        Ladies Watches | Bags | Sport Shoes | Reebok Shoes | Puma Shoes | Boxers | Wallets | Tops | Earrings |
-        Fastrack Watches | Kurtis | Nike | Smart Watches | Titan Watches | Designer Blouse | Gowns | Rings |
-        Cricket |Shoes | Forever 21 | Eye Makeup | Photo Frames | Punjabi Suits | Bikini | Myntra Fashion Show |
-        Lipstick | Saree | Watches | Dresses | Lehenga | Nike Shoes | Goggles | Bras | Suit | Chinos | Shoes |
-        Adidas Shoes | Woodland Shoes | Jewellery | Designers Sarees
-    </div>
-    <p align="center">&copy; 2023 Myntra. All rights reserved.</p>
-    <hr>
-    <div class="contact">
-        <div class="email">
-            Email: <a href="mailto:contact@myntra.com">
-                contact@myntra.com
-            </a>
-        </div>
-        <div class="phone">
-            Phone: +91 98278 06424
-        </div>
-    </div>
-    <hr>
-    <div class="footer_para">
-        <h3>MYNTRA APP</h3>
-        Myntra, India’s no. 1 online fashion destination justifies its fashion relevance by bringing something
-        new and chic to the table on the daily. Fashion trends seem to change at lightning speed, yet the Myntra
-        shopping app has managed to keep up without any hiccups. In addition, Myntra has vowed to serve
-        customers to the best of its ability by introducing its first-ever loyalty program, The Myntra Insider.
-        Gain access to priority delivery, early sales, lucrative deals and other special perks on all your
-        shopping with the Myntra app. Download the Myntra app on your Android or IOS device today and experience
-        shopping like never before!
-        <br>
-
-        <h3>HISTORY OF MYNTRA</h3>
-        Becoming India’s no. 1 fashion destination is not an easy feat. Sincere efforts, digital enhancements
-        and a team of dedicated personnel with an equally loyal customer base have made Myntra the online
-        platform that it is today. The original B2B venture for personalized gifts was conceived in 2007 but
-        transitioned into a full-fledged ecommerce giant within a span of just a few years. By 2012, Myntra had
-        introduced 350 Indian and international brands to its platform, and this has only grown in number each
-        passing year. Today Myntra sits on top of the online fashion game with an astounding social media
-        following, a loyalty program dedicated to its customers, and tempting, hard-to-say-no-to deals.
-
-        The Myntra shopping app came into existence in the year 2015 to further encourage customers’ shopping
-        sprees. Download the app on your Android or IOS device this very minute to experience fashion like never
-        before
-
-        <h3>SHOP ONLINE AT MYNTRA WITH COMPLETE CONVENIENCE</h3>
-        Another reason why Myntra is the best of all online stores is the complete convenience that it offers.
-        You can view your favourite brands with price options for different products in one place. A
-        user-friendly interface will guide you through your selection process. Comprehensive size charts,
-        product information and high-resolution images help you make the best buying decisions. You also have
-        the freedom to choose your payment options, be it card or cash-on-delivery. The 14-day returns policy
-        gives you more power as a buyer. Additionally, the try-and-buy option for select products takes
-        customer-friendliness to the next level.
-
-        Enjoy the hassle-free experience as you shop comfortably from your home or your workplace. You can also
-        shop for your friends, family and loved-ones and avail our gift services for special occasions.
-    </div>
-
+        <p align="center">&copy; 2026 Myntra. All rights reserved.</p>
     </footer>
+
+    <!-- MODALS -->
+    <div id="product-modal" class="modal-overlay">
+        <div class="modal-container">
+            <button class="modal-close-btn" onclick="closeProductModal()">✕</button>
+            <div id="product-modal-body"></div>
+        </div>
+    </div>
+
+    <div id="cart-modal" class="modal-overlay">
+        <div class="modal-container" style="max-width: 900px;">
+            <button class="modal-close-btn" onclick="closeCartModal()">✕</button>
+            <div id="cart-modal-body"></div>
+        </div>
+    </div>
+
+    <div id="wishlist-modal" class="modal-overlay">
+        <div class="modal-container" style="max-width: 800px;">
+            <button class="modal-close-btn" onclick="closeWishlistModal()">✕</button>
+            <div id="wishlist-modal-body"></div>
+        </div>
+    </div>
+
+    <div id="auth-modal" class="modal-overlay">
+        <div class="modal-container" style="max-width: 450px;">
+            <button class="modal-close-btn" onclick="closeAuthModal()">✕</button>
+            <div id="auth-content" class="auth-container">
+                <div class="auth-tabs">
+                    <div id="tab-login" class="auth-tab active">LOGIN</div>
+                    <div id="tab-register" class="auth-tab">REGISTER</div>
+                </div>
+                <form id="form-login" class="auth-form" onsubmit="handleLogin(event)">
+                    <input type="email" id="login-email" placeholder="Enter Email Address" required>
+                    <input type="password" id="login-password" placeholder="Enter Password" required>
+                    <button type="submit" class="btn-auth-submit">LOGIN</button>
+                </form>
+                <form id="form-register" class="auth-form" onsubmit="handleRegister(event)" style="display: none;">
+                    <input type="text" id="reg-name" placeholder="Full Name" required>
+                    <input type="email" id="reg-email" placeholder="Email Address" required>
+                    <input type="password" id="reg-password" placeholder="Create Password" required>
+                    <button type="submit" class="btn-auth-submit">CREATE ACCOUNT</button>
+                </form>
+            </div>
+            <div id="user-profile-content" class="auth-container" style="display: none; text-align: center;">
+                <h3>User Profile</h3>
+                <p>Logged in as: <strong id="logged-user-name"></strong></p>
+                <p style="color: #7e818c; font-size: 13px;" id="logged-user-email"></p>
+                <button class="btn-auth-submit" onclick="handleLogout()" style="margin-top: 20px; background: #282c3f;">LOGOUT</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
 </body>
 
 </html>
